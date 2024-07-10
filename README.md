@@ -19,7 +19,7 @@ Este proyecto debe ser compilado.
 
 `git clone https://github.com/daleonv/test-procedures.git`
 
-Para levantar el proyecto se debe usar el siguiente comando:
+Para levantar el proyecto se debe tener levantada la base de datos en xampp y posteriormente se debe usar el siguiente comando:
 
 `gradle bootRun`
 
