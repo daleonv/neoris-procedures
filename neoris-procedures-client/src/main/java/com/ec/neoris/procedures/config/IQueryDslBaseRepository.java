@@ -1,4 +1,4 @@
-package com.ec.neoris.procedures.repositories;
+package com.ec.neoris.procedures.config;
 
 import org.springframework.data.jpa.repository.Query;
 

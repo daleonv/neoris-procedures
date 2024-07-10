@@ -1,6 +1,7 @@
 package com.ec.neoris.procedures.repositories;
 
 import com.ec.neoris.entities.procedures.CustomerEntity;
+import com.ec.neoris.procedures.config.JPAQueryDslBaseRepository;
 import com.querydsl.core.types.Projections;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Repository;

@@ -1,6 +1,7 @@
 package com.ec.neoris.procedures.repositories;
 
 import com.ec.neoris.entities.procedures.CustomerEntity;
+import com.ec.neoris.procedures.config.IQueryDslBaseRepository;
 
 import java.util.List;
 import java.util.Optional;

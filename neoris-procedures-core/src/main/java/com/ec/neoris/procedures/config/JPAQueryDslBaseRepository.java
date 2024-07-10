@@ -1,5 +1,6 @@
-package com.ec.neoris.procedures.repositories;
+package com.ec.neoris.procedures.config;
 
+import com.ec.neoris.procedures.config.IQueryDslBaseRepository;
 import com.querydsl.jpa.JPQLQuery;
 import com.querydsl.jpa.impl.JPAQuery;
 import org.springframework.beans.factory.annotation.Autowired;
