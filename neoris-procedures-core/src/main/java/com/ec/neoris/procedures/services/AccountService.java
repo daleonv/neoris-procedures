@@ -1,6 +1,7 @@
 package com.ec.neoris.procedures.services;
 
 import com.ec.neoris.entities.procedures.AccountEntity;
+import com.ec.neoris.entities.procedures.CustomerEntity;
 import com.ec.neoris.procedures.AccountVo;
 import com.ec.neoris.procedures.repositories.IAccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,9 +44,10 @@ public class AccountService implements IAccountService {
     public void saveAccount(AccountVo account) {
         accountRepository.save(AccountEntity.builder()
                 .accountNumber(account.getAccountNumber())
-                .accountType(AccountEntity.AccountType.Savings)
+                .accountType(AccountEntity.AccountType.Ahorros)
                 .initialBalance(account.getInitialBalance())
                 .status(account.getStatus())
+                .customer(CustomerEntity.builder().customerId(account.getCustomerId()).build())
                 .build());
     }
 
@@ -76,7 +78,7 @@ public class AccountService implements IAccountService {
     private static AccountEntity getAccountEntity(AccountVo account, Optional<AccountEntity> optionalAccount) {
         AccountEntity existingAccount = optionalAccount.get();
         existingAccount.setAccountNumber(account.getAccountNumber());
-        existingAccount.setAccountType(AccountEntity.AccountType.Savings);
+        existingAccount.setAccountType(AccountEntity.AccountType.Ahorros);
         existingAccount.setInitialBalance(account.getInitialBalance());
         existingAccount.setStatus(account.getStatus());
         return existingAccount;

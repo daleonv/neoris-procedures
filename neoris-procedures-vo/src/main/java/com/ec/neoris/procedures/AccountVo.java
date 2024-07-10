@@ -16,6 +16,6 @@ public class AccountVo {
     private String accountType;
     private Long initialBalance;
     private String status;
-
+private Long customerId;
 
 }

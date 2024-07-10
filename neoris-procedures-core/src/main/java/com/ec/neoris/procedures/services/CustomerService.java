@@ -46,7 +46,7 @@ public class CustomerService implements ICustomerService {
                 .password(customer.getPassword())
                 .status(customer.getStatus())
                 .name(customer.getName())
-                .gender(PersonEntity.Gender.Male)
+                .gender(PersonEntity.Gender.Hombre)
                 .age(customer.getAge())
                 .identification(customer.getIdentification())
                 .address(customer.getAddress())
@@ -83,7 +83,7 @@ public class CustomerService implements ICustomerService {
         existingCustomer.setPassword(customer.getPassword());
         existingCustomer.setStatus(customer.getStatus());
         existingCustomer.setName(customer.getName());
-        existingCustomer.setGender(PersonEntity.Gender.Female);
+        existingCustomer.setGender(PersonEntity.Gender.Hombre);
         existingCustomer.setAge(customer.getAge());
         existingCustomer.setIdentification(customer.getIdentification());
         existingCustomer.setAddress(customer.getAddress());

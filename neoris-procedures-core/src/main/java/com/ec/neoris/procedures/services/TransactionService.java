@@ -44,7 +44,7 @@ public class TransactionService implements ITransactionService {
     public void saveTransaction(TransactionVo transaction) {
         transactionRepository.save(TransactionEntity.builder()
                 .date(transaction.getDate())
-                .transactionType(TransactionEntity.TransactionType.Debit)
+                .transactionType(TransactionEntity.TransactionType.Deposito)
                 .amount(transaction.getAmount())
                 .balance(transaction.getBalance())
                 .account(AccountEntity.builder().accountId(transaction.getAccountId()).build())
@@ -79,7 +79,7 @@ public class TransactionService implements ITransactionService {
     private static TransactionEntity getTransactionEntity(TransactionVo transaction, Optional<TransactionEntity> optionalTransaction) {
         TransactionEntity existingTransaction = optionalTransaction.get();
         existingTransaction.setDate(transaction.getDate());
-        existingTransaction.setTransactionType(TransactionEntity.TransactionType.Debit);
+        existingTransaction.setTransactionType(TransactionEntity.TransactionType.Deposito);
         existingTransaction.setAmount(transaction.getAmount());
         existingTransaction.setBalance(transaction.getBalance());
         existingTransaction.setAccount(AccountEntity.builder().accountId(transaction.getAccountId()).build());
