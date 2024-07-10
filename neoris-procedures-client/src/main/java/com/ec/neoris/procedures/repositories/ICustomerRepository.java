@@ -1,8 +1,10 @@
 package com.ec.neoris.procedures.repositories;
 
 import com.ec.neoris.entities.procedures.CustomerEntity;
+import com.ec.neoris.procedures.AccountStatusResponseVo;
 import com.ec.neoris.procedures.config.IQueryDslBaseRepository;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,4 +30,14 @@ public interface ICustomerRepository extends IQueryDslBaseRepository<CustomerEnt
      */
     Optional<CustomerEntity> findById(Long customerId);
 
+
+    /**
+     * Return account status
+     *
+     * @param customerId  Long
+     * @param initialDate Date
+     * @param endDate     Date
+     * @return List<AccountStatusResponseVo>
+     */
+    List<AccountStatusResponseVo> findReportByFilters(Long customerId, Date initialDate, Date endDate);
 }

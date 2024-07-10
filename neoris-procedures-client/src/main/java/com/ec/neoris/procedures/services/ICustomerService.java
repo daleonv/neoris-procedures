@@ -1,6 +1,8 @@
 package com.ec.neoris.procedures.services;
 
 import com.ec.neoris.entities.procedures.CustomerEntity;
+import com.ec.neoris.procedures.AccountStatusRequestVo;
+import com.ec.neoris.procedures.AccountStatusResponseVo;
 import com.ec.neoris.procedures.CustomerVo;
 
 import java.util.List;
@@ -41,4 +43,11 @@ public interface ICustomerService {
      */
     void deleteCustomer(Long customerId);
 
+    /**
+     * Return account status
+     *
+     * @param filters AccountStatusRequestVo
+     * @return List<AccountStatusResponseVo>
+     */
+    List<AccountStatusResponseVo> findAccountStatus(AccountStatusRequestVo filters);
 }

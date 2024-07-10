@@ -2,6 +2,8 @@ package com.ec.neoris.procedures.services;
 
 import com.ec.neoris.entities.procedures.CustomerEntity;
 import com.ec.neoris.entities.procedures.PersonEntity;
+import com.ec.neoris.procedures.AccountStatusRequestVo;
+import com.ec.neoris.procedures.AccountStatusResponseVo;
 import com.ec.neoris.procedures.CustomerVo;
 import com.ec.neoris.procedures.repositories.ICustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -77,6 +79,13 @@ public class CustomerService implements ICustomerService {
         optionalCustomer.ifPresent(customer -> customerRepository.delete(customer));
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public List<AccountStatusResponseVo> findAccountStatus(AccountStatusRequestVo filters) {
+        return customerRepository.findReportByFilters(filters.getCustomerId(), filters.getInitialDate(), filters.getEndDate());
+    }
 
     private static CustomerEntity getCustomerEntity(CustomerVo customer, Optional<CustomerEntity> optionalCustomer) {
         CustomerEntity existingCustomer = optionalCustomer.get();

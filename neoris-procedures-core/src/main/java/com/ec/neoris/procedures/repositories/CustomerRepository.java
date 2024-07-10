@@ -1,11 +1,15 @@
 package com.ec.neoris.procedures.repositories;
 
 import com.ec.neoris.entities.procedures.CustomerEntity;
+import com.ec.neoris.entities.procedures.QAccountEntity;
+import com.ec.neoris.entities.procedures.QTransactionEntity;
+import com.ec.neoris.procedures.AccountStatusResponseVo;
 import com.ec.neoris.procedures.config.JPAQueryDslBaseRepository;
 import com.querydsl.core.types.Projections;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Repository;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -64,6 +68,30 @@ public class CustomerRepository extends JPAQueryDslBaseRepository<CustomerEntity
                         customerEntity.age
                 ))
                 .stream().findFirst();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public List<AccountStatusResponseVo> findReportByFilters(Long customerId, Date initialDate, Date endDate) {
+        QAccountEntity account = QAccountEntity.accountEntity;
+        QTransactionEntity transaction = QTransactionEntity.transactionEntity;
+        return from(customerEntity).select(Projections.bean(AccountStatusResponseVo.class,
+                        transaction.date,
+                        customerEntity.name,
+                        account.accountNumber,
+                        account.accountType,
+                        account.initialBalance,
+                        account.status,
+                        transaction.transactionType,
+                        transaction.balance
+                ))
+                .innerJoin(customerEntity.accounts, account)
+                .innerJoin(account.transactions, transaction)
+                .where(customerEntity.customerId.eq(customerId))
+                .where(transaction.date.between(initialDate, endDate))
+                .stream().toList();
     }
 
 }
