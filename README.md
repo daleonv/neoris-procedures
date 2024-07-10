@@ -8,7 +8,8 @@
 Este proyecto no necesita ser compilado
 
 2) Se debe descargar el proyecto neoris-entities. En este proyecto está el mapeo de las entidades
-   `git clone https://github.com/daleonv/neoris-entities.git`
+
+`git clone https://github.com/daleonv/neoris-entities.git`
 
 Este proyecto debe ser compilado.
 
