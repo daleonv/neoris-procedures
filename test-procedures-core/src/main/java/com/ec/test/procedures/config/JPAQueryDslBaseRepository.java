@@ -1,6 +1,5 @@
 package com.ec.test.procedures.config;
 
-import com.ec.test.procedures.config.IQueryDslBaseRepository;
 import com.querydsl.jpa.JPQLQuery;
 import com.querydsl.jpa.impl.JPAQuery;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +32,7 @@ public class JPAQueryDslBaseRepository<T> extends QuerydslRepositorySupport impl
         this.getEntityManager().merge(entity);
     }
 
-    public void delete (T entity) {
+    public void delete(T entity) {
         this.getEntityManager().remove(
                 this.getEntityManager().contains(entity) ? entity : this.getEntityManager().merge(entity)
         );
