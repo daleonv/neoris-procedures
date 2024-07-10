@@ -1,0 +1,35 @@
+apply from: "../neoris-gradle/versions.gradle"
+apply from: "../neoris-gradle/plugins.gradle"
+
+ext {
+	baseVersion = '0.0.1-SNAPSHOT'
+}
+
+buildscript {
+
+	apply from: "../neoris-gradle/repositories.gradle"
+
+	repositories repos
+
+	apply from: "../neoris-gradle/plugins.gradle"
+
+	dependencies {
+		classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootPluginVersion}"
+		classpath "io.spring.gradle:dependency-management-plugin:${dependenciesManagementPluginVersion}"
+	}
+}
+
+subprojects {
+	apply from: "../../neoris-gradle/projects.gradle"
+
+	repositories repos
+
+	dependencyManagement {
+		apply from: '../../neoris-gradle/dependencies.gradle'
+	}
+}
+
+allprojects {
+	group = 'com.ec.neoris'
+	version = "${baseVersion}"
+}

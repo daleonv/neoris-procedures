@@ -1,0 +1,6 @@
+rootProject.name = 'neoris-procedures'
+include 'neoris-procedures-client'
+include 'neoris-procedures-core'
+include 'neoris-procedures-services'
+include 'neoris-procedures-vo'
+

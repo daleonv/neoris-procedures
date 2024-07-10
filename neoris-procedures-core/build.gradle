@@ -1,0 +1,26 @@
+dependencies {
+    api project(":neoris-procedures-client")
+
+    implementation 'com.ec.neoris.entities:neoris-entities'
+
+    // Context
+    implementation 'org.springframework.boot:spring-boot-autoconfigure'
+
+    // Data
+    implementation 'org.springframework.data:spring-data-jpa'
+    implementation 'com.querydsl:querydsl-jpa'
+    implementation 'mysql:mysql-connector-java'
+
+    implementation 'org.hibernate:hibernate-core'
+    implementation 'org.hibernate:hibernate-entitymanager'
+
+    implementation 'javax.annotation:javax.annotation-api'
+
+    implementation 'org.mapstruct:mapstruct'
+    annotationProcessor "org.mapstruct:mapstruct-processor"
+
+}
+
+jar {
+    enabled = true
+}
