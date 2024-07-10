@@ -65,12 +65,4 @@ public class CustomerRepository extends JPAQueryDslBaseRepository<CustomerEntity
                 .stream().findFirst();
     }
 
-    /**
-     * {@inheritDoc}
-
-    @Override
-    public void deleteById(Long customerId){
-
-    } */
-
 }

@@ -28,10 +28,4 @@ public interface ICustomerRepository extends IQueryDslBaseRepository<CustomerEnt
      */
     Optional<CustomerEntity> findById(Long customerId);
 
-    /**
-     * Delete a customer.
-     *
-     * @param customerId Long
-     */
-    //void deleteById(Long customerId);
 }
