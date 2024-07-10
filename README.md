@@ -22,3 +22,5 @@ Este proyecto debe ser compilado.
 Para levantar el proyecto se debe usar el siguiente comando:
 
 `gradle bootRun`
+
+El archivo json para la prueba de los web services está en la raíz del proyecto.
