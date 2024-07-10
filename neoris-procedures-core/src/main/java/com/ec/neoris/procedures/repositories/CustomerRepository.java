@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import static com.ec.neoris.entities.procedures.QCustomerEntity.customerEntity;
 
@@ -28,13 +29,47 @@ public class CustomerRepository extends JPAQueryDslBaseRepository<CustomerEntity
     @Override
     public List<CustomerEntity> findCustomerList() {
         return from(customerEntity).select(Projections.bean(CustomerEntity.class,
+                                customerEntity.name,
+                                customerEntity.gender,
+                                customerEntity.identification,
+                                customerEntity.address,
+                                customerEntity.phone,
+                                customerEntity.customerId,
                                 customerEntity.password,
                                 customerEntity.status,
-                                customerEntity.personId,
-                                customerEntity.customerId
+                                customerEntity.age
                         )
                 )
                 .stream().toList();
     }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public Optional<CustomerEntity> findById(Long customerId) {
+        return from(customerEntity)
+                .where(customerEntity.customerId.eq(customerId))
+                .select(Projections.bean(CustomerEntity.class,
+                        customerEntity.name,
+                        customerEntity.gender,
+                        customerEntity.identification,
+                        customerEntity.address,
+                        customerEntity.phone,
+                        customerEntity.customerId,
+                        customerEntity.password,
+                        customerEntity.status,
+                        customerEntity.age
+                ))
+                .stream().findFirst();
+    }
+
+    /**
+     * {@inheritDoc}
+
+    @Override
+    public void deleteById(Long customerId){
+
+    } */
 
 }

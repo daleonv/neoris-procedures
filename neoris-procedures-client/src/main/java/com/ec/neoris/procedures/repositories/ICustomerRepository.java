@@ -3,6 +3,7 @@ package com.ec.neoris.procedures.repositories;
 import com.ec.neoris.entities.procedures.CustomerEntity;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Service interface for customer resources
@@ -18,4 +19,18 @@ public interface ICustomerRepository extends IQueryDslBaseRepository<CustomerEnt
      * @return List<CustomerEntity>
      */
     List<CustomerEntity> findCustomerList();
+
+    /**
+     * Return customer information by customerId
+     *
+     * @return Optional<CustomerEntity>
+     */
+    Optional<CustomerEntity> findById(Long customerId);
+
+    /**
+     * Delete a customer.
+     *
+     * @param customerId Long
+     */
+    //void deleteById(Long customerId);
 }

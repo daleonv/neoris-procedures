@@ -8,6 +8,8 @@ public interface IQueryDslBaseRepository<T> {
 
     void update(T entity);
 
+    void delete(T entity);
+
     @Query("SELECT nextval('1?')")
     Integer getSequence(String sequenceName);
 

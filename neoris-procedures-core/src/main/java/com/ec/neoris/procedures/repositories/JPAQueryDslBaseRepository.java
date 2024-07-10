@@ -32,6 +32,12 @@ public class JPAQueryDslBaseRepository<T> extends QuerydslRepositorySupport impl
         this.getEntityManager().merge(entity);
     }
 
+    public void delete (T entity) {
+        this.getEntityManager().remove(
+                this.getEntityManager().contains(entity) ? entity : this.getEntityManager().merge(entity)
+        );
+    }
+
     protected <P> JPQLQuery<P> cloneQuery(JPAQuery<P> query) {
         return query.clone(this.getEntityManager());
     }

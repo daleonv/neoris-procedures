@@ -10,10 +10,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CustomerVo {
-    private String names;
-    private String address;
-    private String phone;
+    private Long customerId;
     private String password;
     private String status;
+    private String name;
+    private String gender;
+    private Integer age;
+    private String identification;
+    private String address;
+    private String phone;
 
 }

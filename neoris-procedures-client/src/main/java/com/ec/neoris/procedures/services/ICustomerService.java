@@ -1,6 +1,7 @@
 package com.ec.neoris.procedures.services;
 
 import com.ec.neoris.entities.procedures.CustomerEntity;
+import com.ec.neoris.procedures.CustomerVo;
 
 import java.util.List;
 
@@ -18,4 +19,26 @@ public interface ICustomerService {
      * @return List<CustomerEntity>
      */
     List<CustomerEntity> findCustomerList();
+
+    /**
+     * Save customer
+     *
+     * @param customer CustomerVo
+     */
+    void saveCustomer(CustomerVo customer);
+
+    /**
+     * Update customer information.
+     *
+     * @param customer CustomerVo
+     */
+    void updateCustomer(CustomerVo customer);
+
+    /**
+     * Delete a customer.
+     *
+     * @param customerId Long
+     */
+    void deleteCustomer(Long customerId);
+
 }
