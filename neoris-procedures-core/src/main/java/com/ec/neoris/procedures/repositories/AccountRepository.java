@@ -52,7 +52,8 @@ public class AccountRepository extends JPAQueryDslBaseRepository<AccountEntity> 
                         accountEntity.accountNumber,
                         accountEntity.accountType,
                         accountEntity.initialBalance,
-                        accountEntity.status
+                        accountEntity.status,
+                        accountEntity.customer
                 ))
                 .stream().findFirst();
     }

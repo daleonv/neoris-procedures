@@ -81,6 +81,7 @@ public class AccountService implements IAccountService {
         existingAccount.setAccountType(AccountEntity.AccountType.Ahorros);
         existingAccount.setInitialBalance(account.getInitialBalance());
         existingAccount.setStatus(account.getStatus());
+        existingAccount.setCustomer(CustomerEntity.builder().customerId(account.getCustomerId()).build());
         return existingAccount;
     }
 }

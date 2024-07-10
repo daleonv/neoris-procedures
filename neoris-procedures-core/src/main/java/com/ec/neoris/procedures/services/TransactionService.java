@@ -3,6 +3,7 @@ package com.ec.neoris.procedures.services;
 import com.ec.neoris.entities.procedures.AccountEntity;
 import com.ec.neoris.entities.procedures.TransactionEntity;
 import com.ec.neoris.procedures.TransactionVo;
+import com.ec.neoris.procedures.repositories.IAccountRepository;
 import com.ec.neoris.procedures.repositories.ITransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
@@ -28,6 +29,10 @@ public class TransactionService implements ITransactionService {
     @Autowired
     private ITransactionRepository transactionRepository;
 
+    @Lazy
+    @Autowired
+    private IAccountRepository accountRepository;
+
 
     /**
      * {@inheritDoc}
@@ -41,15 +46,31 @@ public class TransactionService implements ITransactionService {
      * {@inheritDoc}
      */
     @Override
-    public void saveTransaction(TransactionVo transaction) {
-        transactionRepository.save(TransactionEntity.builder()
-                .date(transaction.getDate())
-                .transactionType(TransactionEntity.TransactionType.Deposito)
-                .amount(transaction.getAmount())
-                .balance(transaction.getBalance())
-                .account(AccountEntity.builder().accountId(transaction.getAccountId()).build())
-                .status(transaction.getStatus())
-                .build());
+    public String saveTransaction(TransactionVo transaction) {
+        Optional<AccountEntity> optionalAccount = accountRepository.findById(transaction.getAccountId());
+        if (optionalAccount.isPresent()) {
+            double balance;
+            if (transaction.getTransactionType().equals("Deposito")) {
+                balance = optionalAccount.get().getInitialBalance() + transaction.getAmount();
+            } else {
+                balance = optionalAccount.get().getInitialBalance() - transaction.getAmount();
+            }
+            if (balance >= 0) {
+                optionalAccount.get().setInitialBalance(balance);
+                accountRepository.update(optionalAccount.get());
+                transactionRepository.save(TransactionEntity.builder()
+                        .date(transaction.getDate())
+                        .transactionType(TransactionEntity.TransactionType.Deposito)
+                        .amount(transaction.getAmount())
+                        .balance(balance)
+                        .account(AccountEntity.builder().accountId(transaction.getAccountId()).build())
+                        .status(transaction.getStatus())
+                        .build());
+                return "1";
+            }
+            return "2";
+        }
+        return null;
     }
 
     /**

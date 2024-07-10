@@ -24,8 +24,9 @@ public interface ITransactionService {
      * Save transaction
      *
      * @param transaction TransactionVo
+     * @return String
      */
-    void saveTransaction(TransactionVo transaction);
+    String saveTransaction(TransactionVo transaction);
 
     /**
      * Update transaction information.

@@ -39,11 +39,11 @@ public class TransactionController {
     @PostMapping("")
     public ResponseEntity<Response<Void>> saveTransaction(
             @RequestBody TransactionVo transaction) throws IOException {
-        transactionService.saveTransaction(transaction);
+        String response = transactionService.saveTransaction(transaction);
         return new ResponseEntity<>(Response.<Void>builder()
-                .code(HttpStatus.CREATED.value())
-                .message("Creado con éxito")
-                .build(), HttpStatus.CREATED);
+                .code(response.equals("1") ? HttpStatus.CREATED.value() : HttpStatus.BAD_REQUEST.value())
+                .message(response.equals("1") ? "Creado" : "No cuenta con los fondos suficientes")
+                .build(), response.equals("1") ? HttpStatus.CREATED : HttpStatus.BAD_REQUEST);
     }
 
     @PutMapping("/{transactionId}")
