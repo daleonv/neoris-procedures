@@ -1,9 +1,9 @@
 package com.ec.neoris.procedures.controllers;
 
-import com.ec.neoris.entities.procedures.CustomerEntity;
-import com.ec.neoris.procedures.CustomerVo;
+import com.ec.neoris.entities.procedures.TransactionEntity;
+import com.ec.neoris.procedures.TransactionVo;
 import com.ec.neoris.procedures.config.Response;
-import com.ec.neoris.procedures.services.ICustomerService;
+import com.ec.neoris.procedures.services.ITransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpStatus;
@@ -21,45 +21,45 @@ import java.io.IOException;
 import java.util.List;
 
 @RestController
-@RequestMapping("clientes")
+@RequestMapping("movimientos")
 @Lazy
-public class CustomerController {
+public class TransactionController {
     @Lazy
     @Autowired
-    private ICustomerService customerService;
+    private ITransactionService transactionService;
 
     @GetMapping("")
-    public ResponseEntity<Response<List<CustomerEntity>>> findCustomerList() {
-        return new ResponseEntity<>(Response.<List<CustomerEntity>>builder()
-                .data(customerService.findCustomerList())
+    public ResponseEntity<Response<List<TransactionEntity>>> findTransactionList() {
+        return new ResponseEntity<>(Response.<List<TransactionEntity>>builder()
+                .data(transactionService.findTransactionList())
                 .code(HttpStatus.OK.value())
                 .build(), HttpStatus.OK);
     }
 
     @PostMapping("")
-    public ResponseEntity<Response<Void>> saveCustomer(
-            @RequestBody CustomerVo customer) throws IOException {
-        customerService.saveCustomer(customer);
+    public ResponseEntity<Response<Void>> saveTransaction(
+            @RequestBody TransactionVo transaction) throws IOException {
+        transactionService.saveTransaction(transaction);
         return new ResponseEntity<>(Response.<Void>builder()
                 .code(HttpStatus.CREATED.value())
                 .message("Creado con éxito")
                 .build(), HttpStatus.CREATED);
     }
 
-    @PutMapping("/{customerId}")
-    public ResponseEntity<Response<Void>> updateCustomer(@PathVariable Long customerId,
-                                                         @RequestBody CustomerVo customer) {
-        customer.setCustomerId(customerId);
-        customerService.updateCustomer(customer);
+    @PutMapping("/{transactionId}")
+    public ResponseEntity<Response<Void>> updateTransaction(@PathVariable Long transactionId,
+                                                            @RequestBody TransactionVo transaction) {
+        transaction.setTransactionId(transactionId);
+        transactionService.updateTransaction(transaction);
         return new ResponseEntity<>(Response.<Void>builder()
                 .code(HttpStatus.OK.value())
                 .message("Actualizado con éxito")
                 .build(), HttpStatus.OK);
     }
 
-    @DeleteMapping("/{customerId}")
-    public ResponseEntity<Void> deleteCustomer(@PathVariable Long customerId) {
-        customerService.deleteCustomer(customerId);
+    @DeleteMapping("/{transactionId}")
+    public ResponseEntity<Void> deleteTransaction(@PathVariable Long transactionId) {
+        transactionService.deleteTransaction(transactionId);
         return ResponseEntity.ok().build();
     }
 
