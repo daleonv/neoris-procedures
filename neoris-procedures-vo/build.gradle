@@ -2,5 +2,4 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     compileOnly 'javax.validation:validation-api'
-    implementation 'com.fasterxml.jackson.core:jackson-databind'
 }
