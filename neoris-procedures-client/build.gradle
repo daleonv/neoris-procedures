@@ -2,7 +2,7 @@
 dependencies {
 
     implementation 'com.ec.neoris.entities:neoris-entities'
-
+    api project(":neoris-procedures-vo")
     compileOnly 'org.projectlombok:lombok'
     compileOnly 'com.querydsl:querydsl-core'
     implementation'com.querydsl:querydsl-jpa'

@@ -28,8 +28,12 @@ public class CustomerRepository extends JPAQueryDslBaseRepository<CustomerEntity
     @Override
     public List<CustomerEntity> findCustomerList() {
         return from(customerEntity).select(Projections.bean(CustomerEntity.class,
-                        customerEntity.customerId
-                ))
+                                customerEntity.password,
+                                customerEntity.status,
+                                customerEntity.personId,
+                                customerEntity.customerId
+                        )
+                )
                 .stream().toList();
     }
 

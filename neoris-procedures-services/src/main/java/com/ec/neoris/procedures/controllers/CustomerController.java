@@ -14,14 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1/customer")
+@RequestMapping("clientes")
 @Lazy
 public class CustomerController {
     @Lazy
     @Autowired
     private ICustomerService customerService;
 
-    @GetMapping("findAll")
+    @GetMapping("buscar")
     public ResponseEntity<Response<List<CustomerEntity>>> findCustomerList() {
         return new ResponseEntity<>(Response.<List<CustomerEntity>>builder()
                 .data(customerService.findCustomerList())
