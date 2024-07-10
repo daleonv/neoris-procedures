@@ -1,6 +1,6 @@
-rootProject.name = 'neoris-procedures'
-include 'neoris-procedures-client'
-include 'neoris-procedures-core'
-include 'neoris-procedures-services'
-include 'neoris-procedures-vo'
+rootProject.name = 'test-procedures'
+include 'test-procedures-client'
+include 'test-procedures-core'
+include 'test-procedures-services'
+include 'test-procedures-vo'
 

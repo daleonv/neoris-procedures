@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS neoris_schema;
-USE neoris_schema;
+CREATE DATABASE IF NOT EXISTS test_schema;
+USE test_schema;
 
 -- Table for Customer which inherits from Person
 CREATE TABLE Customer (

@@ -1,4 +1,4 @@
-package com.ec.neoris.procedures;
+package com.ec.test.procedures;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

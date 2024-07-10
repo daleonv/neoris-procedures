@@ -1,4 +1,4 @@
-package com.ec.neoris.procedures;
+package com.ec.test.procedures;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

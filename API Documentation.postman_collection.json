@@ -27,13 +27,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/neorisProcedures/clientes",
+							"raw": "localhost:8080/testProcedures/clientes",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"neorisProcedures",
+								"testProcedures",
 								"clientes"
 							]
 						},
@@ -198,13 +198,13 @@
 							"raw": "{\n    \"password\": \"mypassword123\",\n    \"status\": \"Activo\",\n    \"name\": \"John Doe\",\n    \"gender\": \"Hombre\",\n    \"age\": 30,\n    \"identification\": \"ID123456\",\n    \"address\": \"123 Main St\",\n    \"phone\": \"123-456-7890\"\n}\n"
 						},
 						"url": {
-							"raw": "localhost:8080/neorisProcedures/clientes",
+							"raw": "localhost:8080/testProcedures/clientes",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"neorisProcedures",
+								"testProcedures",
 								"clientes"
 							]
 						},
@@ -461,13 +461,13 @@
 							"raw": "{\n    \"password\": \"mypassword123\",\n    \"status\": \"Active\",\n    \"name\": \"John Doe\",\n    \"gender\": \"Male\",\n    \"age\": 30,\n    \"identification\": \"ID123456\",\n    \"address\": \"123 Main St\",\n    \"phone\": \"123-456-7890\"\n}\n"
 						},
 						"url": {
-							"raw": "localhost:8080/neorisProcedures/clientes/3",
+							"raw": "localhost:8080/testProcedures/clientes/3",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"neorisProcedures",
+								"testProcedures",
 								"clientes",
 								"3"
 							]
@@ -793,13 +793,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/neorisProcedures/clientes/2",
+							"raw": "localhost:8080/testProcedures/clientes/2",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"neorisProcedures",
+								"testProcedures",
 								"clientes",
 								"2"
 							]
@@ -938,13 +938,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/neorisProcedures/cuentas",
+							"raw": "localhost:8080/testProcedures/cuentas",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"neorisProcedures",
+								"testProcedures",
 								"cuentas"
 							]
 						},
@@ -1109,13 +1109,13 @@
 							"raw": "{\n    \"accountNumber\": \"1234567890\",\n    \"accountType\": \"Ahorros\",\n    \"initialBalance\": 1000.00,\n    \"status\": \"Activo\",\n    \"customerId\": 1\n}"
 						},
 						"url": {
-							"raw": "localhost:8080/neorisProcedures/cuentas",
+							"raw": "localhost:8080/testProcedures/cuentas",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"neorisProcedures",
+								"testProcedures",
 								"cuentas"
 							]
 						},
@@ -1372,13 +1372,13 @@
 							"raw": "{\n    \"password\": \"mypassword123\",\n    \"status\": \"Active\",\n    \"name\": \"John Doe\",\n    \"gender\": \"Male\",\n    \"age\": 30,\n    \"identification\": \"ID123456\",\n    \"address\": \"123 Main St\",\n    \"phone\": \"123-456-7890\"\n}\n"
 						},
 						"url": {
-							"raw": "localhost:8080/neorisProcedures/cuentas/3",
+							"raw": "localhost:8080/testProcedures/cuentas/3",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"neorisProcedures",
+								"testProcedures",
 								"cuentas",
 								"3"
 							]
@@ -1704,13 +1704,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/neorisProcedures/cuentas/2",
+							"raw": "localhost:8080/testProcedures/cuentas/2",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"neorisProcedures",
+								"testProcedures",
 								"cuentas",
 								"2"
 							]
@@ -1849,13 +1849,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/neorisProcedures/movimientos",
+							"raw": "localhost:8080/testProcedures/movimientos",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"neorisProcedures",
+								"testProcedures",
 								"movimientos"
 							]
 						},
@@ -2020,13 +2020,13 @@
 							"raw": "{\n    \"date\": \"2024-07-10T10:00:00\",\n    //\"transactionType\": \"Deposito\",\n    \"transactionType\": \"Retiro\",\n    \"amount\": 10000,\n    \"accountId\": 1,\n    \"status\": \"Activo\"\n}\n"
 						},
 						"url": {
-							"raw": "localhost:8080/neorisProcedures/movimientos",
+							"raw": "localhost:8080/testProcedures/movimientos",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"neorisProcedures",
+								"testProcedures",
 								"movimientos"
 							]
 						},
@@ -2283,13 +2283,13 @@
 							"raw": "{\n    \"password\": \"mypassword123\",\n    \"status\": \"Active\",\n    \"name\": \"John Doe\",\n    \"gender\": \"Male\",\n    \"age\": 30,\n    \"identification\": \"ID123456\",\n    \"address\": \"123 Main St\",\n    \"phone\": \"123-456-7890\"\n}\n"
 						},
 						"url": {
-							"raw": "localhost:8080/neorisProcedures/movimientos/3",
+							"raw": "localhost:8080/testProcedures/movimientos/3",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"neorisProcedures",
+								"testProcedures",
 								"movimientos",
 								"3"
 							]
@@ -2615,13 +2615,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/neorisProcedures/movimientos/2",
+							"raw": "localhost:8080/testProcedures/movimientos/2",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"neorisProcedures",
+								"testProcedures",
 								"movimientos",
 								"2"
 							]
@@ -2769,13 +2769,13 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8080/neorisProcedures/reportes",
+							"raw": "localhost:8080/testProcedures/reportes",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"neorisProcedures",
+								"testProcedures",
 								"reportes"
 							]
 						},

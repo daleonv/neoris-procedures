@@ -1,5 +1,5 @@
-apply from: "../neoris-gradle/versions.gradle"
-apply from: "../neoris-gradle/plugins.gradle"
+apply from: "../test-gradle/versions.gradle"
+apply from: "../test-gradle/plugins.gradle"
 
 ext {
 	baseVersion = '0.0.1-SNAPSHOT'
@@ -7,11 +7,11 @@ ext {
 
 buildscript {
 
-	apply from: "../neoris-gradle/repositories.gradle"
+	apply from: "../test-gradle/repositories.gradle"
 
 	repositories repos
 
-	apply from: "../neoris-gradle/plugins.gradle"
+	apply from: "../test-gradle/plugins.gradle"
 
 	dependencies {
 		classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootPluginVersion}"
@@ -20,16 +20,16 @@ buildscript {
 }
 
 subprojects {
-	apply from: "../../neoris-gradle/projects.gradle"
+	apply from: "../../test-gradle/projects.gradle"
 
 	repositories repos
 
 	dependencyManagement {
-		apply from: '../../neoris-gradle/dependencies.gradle'
+		apply from: '../../test-gradle/dependencies.gradle'
 	}
 }
 
 allprojects {
-	group = 'com.ec.neoris'
+	group = 'com.ec.test'
 	version = "${baseVersion}"
 }

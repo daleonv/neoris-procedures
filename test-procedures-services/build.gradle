@@ -1,0 +1,15 @@
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+    api project(":test-procedures-vo")
+    api project(":test-procedures-core")
+
+    implementation 'com.ec.test.entities:test-entities'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+}
+
+jar {
+    enabled = false
+}
