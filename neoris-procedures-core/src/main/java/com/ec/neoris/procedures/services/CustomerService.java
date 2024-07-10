@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * Service for enterprise resources
+ * Service for customer resources
  *
  * @author daleonv
  * @version 1.0
